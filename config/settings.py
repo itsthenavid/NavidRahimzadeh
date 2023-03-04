@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "taggit", 
     # Developer installed apps
     "extensions",
+    "accounts.apps.AccountsConfig",
 ]
 
 MIDDLEWARE = [
