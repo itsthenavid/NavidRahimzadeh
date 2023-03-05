@@ -161,6 +161,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Authentication system settings
 # https://docs.djangoproject.com/en/4.1/topics/auth/
 
+AUTH_USER_MODEL = "accounts.CustomUser"
+
 AUTHENTICATION_BACKENDS = [
     # Django default authentication back-end
     'django.contrib.auth.backends.ModelBackend',
