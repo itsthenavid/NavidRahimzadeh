@@ -18,3 +18,24 @@
     font-weight: 300;
     font-style: normal;
 }
+
+@font-face {
+    font-family: IRANSansX;
+    src: url('../fonts/IRANSansX-Bold.woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: IRANSansX;
+    src: url('../fonts/IRANSansX-Regular.woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: IRANSansX;
+    src: url('../fonts/IRANSansX-Light.woff');
+    font-weight: 300;
+    font-style: normal;
+}
