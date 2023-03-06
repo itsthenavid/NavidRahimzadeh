@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     # Developer installed apps
     "extensions",
     "accounts.apps.AccountsConfig",
+    "pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [
