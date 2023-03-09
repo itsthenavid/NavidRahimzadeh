@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+
+    <!-- Meta Data -->
+    {% include "includes/_meta_data.html" %}
+
+    <!-- Twitter Data -->
+    {% include "includes/_twitter_data.html" %}
+
+    {% comment %} <!-- Open Graph Data --> {% endcomment %}
+    {% comment %} {% include "includes/_open_graph_data.html" %} {% endcomment %}
+
+    <!-- Styles -->
+    {% include "includes/_styles.html" %}
+
+    <!-- Favicons -->
+    {% include "includes/_favicons.html" %}
+
+</head>
+
+<body>
+    <main class="main">
+        <div class="container gutter-top gutter-bottom">
+            <div class="row sticky-parent">
+                <!-- Sidebar -->
+                {% include "includes/_sidebar.html" %}
+
+                <!-- Content -->
+                <div class="col-12 col-md-12 col-xl-9">
+                    <div class="box-outer">
+                        <!-- Menu -->
+                        {% include "includes/_menu.html" %}
+
+                        {% block content %}
+                        
+                        {% endblock content %}
+                    </div><!-- box-outer -->
+                </div><!-- Content -->
+            </div><!-- sticky-parent -->
+        </div><!-- container -->
+    </main>
+
+    <div class="back-to-top"></div>
+
+    <!-- JavaScripts -->
+    {% include "includes/_scripts.html" %}
+
+</body>
+
+</html>
