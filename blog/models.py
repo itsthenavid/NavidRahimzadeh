@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 
-
 class Category(models.Model):
     """
     This model is written to categorize different posts that will be stored 
