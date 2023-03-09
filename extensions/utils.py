@@ -55,3 +55,55 @@ def get_jalali_datetime(datetime):
     )
 
     return output
+
+
+def get_jalali_date(date):
+    """
+    The task of this function is to convert the Gregorian date 
+    (without time)  to the Islamic Hijri Solar / Jalali date in Iran time.
+
+    The input of this function must be from the ORM and its corresponding 
+    data type.
+
+    This function is made with jalali.py file dependency authored by 
+    https://github.com/mjnaderi/.
+    """
+
+    # First, store the Solar Hijri months in a variable.
+    jalali_months = (
+        "فروردین",
+        "اردیبهشت",
+        "خرداد",
+        "تیر",
+        "مرداد",
+        "شهریور",
+        "مهر",
+        "آبان",
+        "آذر",
+        "دی",
+        "بهمن",
+        "اسفند",
+    )
+
+    # We synchronize the given time and date with Iran time.
+    date = localtime(date)
+
+    # Refer to https://github.com/mjnaderi/Jalali.py/blob/master/jalali.py
+    date_to_str = f"{date.year},{date.month},{date.day}"
+    date_to_tuple = jalali.Gregorian(date_to_str).persian_tuple()
+    date_to_list = list(date_to_tuple)
+
+    # Counting and measuring months.
+    for index, month in enumerate(jalali_months):
+        if date_to_list[1] == index + 1:
+            date_to_list[1] = month
+            break
+    
+    # Saving desired output in a variable.
+    output = "{} {} {}".format(
+        date_to_list[2],
+        date_to_list[1],
+        date_to_list[0],    
+    )
+
+    return output
