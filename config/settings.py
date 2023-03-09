@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     "extensions",
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
-    "blog.appsBlogConfig",
+    "blog.apps.BlogConfig",
 ]
 
 MIDDLEWARE = [
