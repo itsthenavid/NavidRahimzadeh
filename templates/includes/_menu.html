@@ -1,0 +1,10 @@
+{% load i18n %}
+
+<div class="nav-container">
+    <ul class="nav">
+        <li class="nav__item"><a {% if request.path_info == "/" %}class='active'{% endif %} href="{% url 'pages:index' %}">{% translate "Home" %}</a></li>
+        <li class="nav__item"><a href="javascript:void(0);">{% translate "Blog" %}</a></li>
+        <li class="nav__item"><a href="javascript:void(0);">{% translate "Portfolios" %}</a></li>
+        <li class="nav__item"><a href="javascript:void(0);">{% translate "Contact With Me" %}</a></li>
+    </ul>
+</div>

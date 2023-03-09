@@ -1,0 +1,70 @@
+{% load static %}
+{% load i18n %}
+
+<aside class="col-12 col-md-12 col-xl-3">
+    <div class="sidebar box-outer sticky-column">
+        <!-- My photo -->
+        <div class="sidebar__base-info">
+            <figure class="avatar-box">
+                <img src="{% static 'assets/images/my-avatar.webp' %}" alt="{% translate "Navid Rahimzadeh" %}">
+            </figure>
+
+            <div class="text-xl-center">
+                <h3 class="title title--h3 sidebar__name">{% translate "Navid Rahimzadeh" %}</h3>
+                <div class="badge">{% translate "Developer, Musician and Essayist" %}</div>
+            </div>
+
+            <button class="btn btn--small btn--icon-right sidebar__btn js-btn-toggle"><span>{% translate "Developer, Musician and Essayist" %}</span><i class="feathericon-chevron-down"></i></button>
+        </div>
+
+        <div class="sidebar__additional-info js-show">
+            <div class="separation"></div>
+            <ul class="details-info">
+                <!-- Email -->
+                <li class="details-info__item">
+                    <span class="box icon-box"><i class="font-icon icon-envelope"></i></span>
+                    <div class="contacts-block__info">
+                        <span class="overhead">{% translate "Email" %}</span>
+                        <a class="text-overflow" href="mailto:itsthenavid@gmail.com"
+                            title="itsthenavid@gmail.com">{% translate "itsthenavid@gmail.com" %}</a>
+                    </div>
+                </li>
+                <!-- Phone -->
+                <li class="details-info__item">
+                    <span class="box icon-box"><i class="font-icon icon-phone"></i></span>
+                    <div class="contacts-block__info">
+                        <span class="overhead">{% translate "Phone Number" %}</span>
+                        <a class="text-overflow" href="tel:+989373858700">{% translate "+98 937 385 8700" %}</a>
+                    </div>
+                </li>
+                <!-- Birthday -->
+                <li class="details-info__item">
+                    <span class="box icon-box"><i class="font-icon icon-calendar"></i></span>
+                    <div class="contacts-block__info">
+                        <span class="overhead">{% translate "Activity Duration" %}</span>
+                        <span class="text-overflow" title="{% translate "6 Years" %}">{% translate "6 Years" %}</span>
+                    </div>
+                </li>
+                <!-- Location -->
+                <li class="details-info__item">
+                    <span class="box icon-box"><i class="font-icon icon-location"></i></span>
+                    <div class="contacts-block__info">
+                        <span class="overhead">{% translate "Location" %}</span>
+                        <span class="text-overflow" title="{% translate "Iran, Kurdistan, Saqqez" %}">{% translate "Iran, Kurdistan, Saqqez" %}</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="separation d-xl-none"></div>
+
+            <!-- Social -->
+            <div class="social">
+                <a class="social__link" href="https://github.com/itsthenavid"><i
+                        class="feathericon-github"></i></a>
+                <a class="social__link" href="https://instagram.com/itsthenavid"><i
+                        class="feathericon-instagram"></i></a>
+                <a class="social__link" href="https://t.me/TheEminemFan"><i
+                        class="feathericon-send"></i></a>
+            </div>
+        </div>
+    </div>
+</aside>
