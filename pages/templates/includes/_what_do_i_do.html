@@ -1,0 +1,51 @@
+{% load static %}
+{% load i18n %}
+
+<h2 class="title title--h2 mt-3">{% translate "What Do I Do?" %}</h2>
+<div class="row">
+    <!-- Case Item -->
+    <div class="col-12 col-lg-6">
+        <div class="case-item box box-inner">
+            <img class="case-item__icon" src="{% static 'assets/icons/icon-design.svg' %}" alt="" />
+            <div>
+                <h3 class="title title--h3">{% translate "Front-End and UI Design" %}</h3>
+                <p class="case-item__caption">{% translate "UI design and Front-End development with HTML, CSS and JavaScript. Although front-end development is not my area of ​​expertise, I have sufficient mastery of this field." %}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Item -->
+    <div class="col-12 col-lg-6">
+        <div class="case-item box box-inner">
+            <img class="case-item__icon" src="{% static 'assets/icons/icon-dev.svg' %}" alt="" />
+            <div>
+                <h3 class="title title--h3">{% translate "Web Development and API" %}</h3>
+                <p class="case-item__caption">{% translate "Web Back-End / API development, with Django / Django ReST Framework. Although I have sufficient knowledge of Ruby / Ruby On Rails :)" %}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Item -->
+    <div class="col-12 col-lg-6">
+        <div class="case-item box box-inner">
+            <img class="case-item__icon" src="{% static 'assets/icons/icon-app.svg' %}" alt="" />
+            <div>
+                <h3 class="title title--h3">{% translate "Multi-Platform Software Development" %}</h3>
+                <p class="case-item__caption">{% translate "Software UI development independent of the operating system with Dart and Flutter (executable in iOS, Android, Windows, Linux and Web)" %}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Item -->
+    <div class="col-12 col-lg-6">
+        <div class="case-item box box-inner">
+            <img class="case-item__icon" src="{% static 'assets/icons/icon-photo.svg' %}" alt="" />
+            <div>
+                <h3 class="title title--h3">{% translate "Photography" %}</h3>
+                <p class="case-item__caption">
+                    {% translate "Photography and recording beautiful views has always been one of the most pleasant arts. Despite my interest in art, recording and preserving beautiful moments has always been a fascinating and favorite thing for me." %}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

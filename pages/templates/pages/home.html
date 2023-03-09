@@ -1,0 +1,19 @@
+{% extends '_base.html' %}
+
+{% load i18n %}
+
+{% load static %}
+
+{% block title %}
+{% translate "Navid Rahimzadeh" %}
+{% endblock title %}
+
+{% block content %}
+
+<!-- About Me -->
+{% include "includes/_about_me.html" %}
+
+<!-- What Do I Do -->
+{% include "includes/_what_do_i_do.html" %}
+
+{% endblock content %}
