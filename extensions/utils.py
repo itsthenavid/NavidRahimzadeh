@@ -46,7 +46,7 @@ def get_jalali_datetime(datetime):
             break
     
     # Saving desired output in a variable.
-    output = "{} {} {}, ساعت {} و {} دقیقه".format(
+    output = "{} {} {}، ساعت {} و {} دقیقه".format(
         datetime_to_list[2],
         datetime_to_list[1],
         datetime_to_list[0],
