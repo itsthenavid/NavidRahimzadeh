@@ -2,11 +2,12 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.utils.timezone import now
 from django.utils.html import format_html
+from django.contrib.auth import get_user_model
 
 from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
 
-from extensions.utils import get_jalali_datetime
+from extensions.utils import get_jalali_datetime, get_jalali_date
 
 # Create your models here.
 
@@ -142,6 +143,12 @@ class Post(models.Model):
         auto_now_add=False,
         auto_now=True
     )
+    author = models.ForeignKey(
+        verbose_name=_("Author"),
+        to=get_user_model(),
+        on_delete=models.SET_NULL,
+        null=True
+    )
     content = RichTextUploadingField(
         _("Post Content"),
         blank=True,
@@ -205,6 +212,10 @@ class Post(models.Model):
     def get_jalali_pub_datetime(self):
         return get_jalali_datetime(self.pub_datetime)
     get_jalali_pub_datetime.short_description = _("Publish Datetime")
+
+    def get_jalali_pub_date(self):
+        return get_jalali_date(self.pub_datetime)
+    get_jalali_pub_date.short_description = _("Publish Date")
 
     # Class Magic Methods
 
