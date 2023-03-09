@@ -24,6 +24,8 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('captcha/', include('captcha.urls')),
+    # Developer apps URLs
+    path("", include("pages.urls")),
 ]
 
 # By default (when settings.DEBUG==True), Django can't serve the Media files.
