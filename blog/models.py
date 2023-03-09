@@ -70,3 +70,149 @@ class Category(models.Model):
     
     def __unicode__(self) -> str:
         return str(f"{self.name}")
+    
+
+class Post(models.Model):
+    """
+    This class is one of the most important classes of the project. 
+    In fact, this class includes the site posts that are displayed. 
+    This class should be developed in an extremely specialized and 
+    sensitive manner.
+
+    This class contains many fields, some of which are up to SRS and the 
+    rest based on the developer's choices along the way.
+    """
+
+    # Database constants
+    _STATUS_CHOICES = (
+        (str(0), _("Draft"), ), 
+        (str(1), _("Published"), ), 
+    )
+
+    # Database fields
+    banner = models.ImageField(
+        _("Post Banner"),
+        default="defaults/post_banner.webp",
+        upload_to="blog/posts/",
+        help_text=_(
+        "The post banner is a field that is shown to "
+        "the user next to the post title in any case "
+        "and is completely different from other "
+        "photos of the post content."
+        )
+    )
+    title = models.CharField(
+        _("Title"),
+        max_length=225,
+        help_text=_(
+        "The title of the post does not need "
+        "additional explanation, just remind me "
+        "that it should be short and concise."
+        )
+    )
+    description = models.CharField(
+        _("Post Description"),
+        max_length=885,
+        blank=True,
+        help_text=_(
+        "The description of this post is shown "
+        "for SEO and as a summary of this post "
+        "and its content in the list of posts. "
+        "The quality of literature and writing "
+        "in this field is very important."
+        )
+    )
+    category = models.ForeignKey(
+        verbose_name=_("Post Category"),
+        to=Category,
+        on_delete=models.SET_NULL,
+        null=True,
+        help_text=_(
+        "Choose a category related to the content "
+        "of the post for the post."
+        )
+    )
+    datetime_created = models.DateTimeField(
+        _("Datetime Created"),
+        auto_now_add=True,
+        auto_now=False
+    )
+    datetime_modified = models.DateTimeField(
+        _("Datetime Modified"),
+        auto_now_add=False,
+        auto_now=True
+    )
+    content = RichTextUploadingField(
+        _("Post Content"),
+        blank=True,
+        help_text=_(
+        "This part of the post is the body and full "
+        "content of the post. Here you are not limited "
+        "by any special rules and you can type as much "
+        "as you want. Remember, your only limitation is "
+        "offensive words. It is not acceptable to post "
+        "offensive words on the site. Apart from this, "
+        "in addition to the text, you can upload any "
+        "file you want."
+        )
+    )
+    pub_datetime = models.DateTimeField(
+        _("Publish Datetime"),
+        default=now,
+        blank=True,
+        null=True,
+    )
+    tags = TaggableManager(
+        _("Tags"),
+        blank=True
+    )
+    status = models.CharField(
+        _("Status"),
+        max_length=1,
+        choices=_STATUS_CHOICES,
+        default=_STATUS_CHOICES[0][0],
+    )
+    is_active = models.BooleanField(
+        _("Active"),
+        default=True,
+        help_text=_(
+        "The \"Active\" option can stop posts from "
+        "being shown to the public."
+        )
+    )
+
+    # Class Subclasses
+
+    class Meta:
+        """
+        This class is designed to change the default settings of this model.
+        """
+
+        # Translation and names
+        verbose_name = _("Post")
+        verbose_name_plural = _("Posts")
+
+    # Class Methods
+
+    def get_post_banner_thumbnail(self):
+        return format_html(
+            """
+            <img src="{}" style="height: 100px; width: 150px;" />
+            """.format(self.banner.url)
+        )
+    get_post_banner_thumbnail.short_description = _("Post Banner")
+
+    def get_jalali_pub_datetime(self):
+        return get_jalali_datetime(self.pub_datetime)
+    get_jalali_pub_datetime.short_description = _("Publish Datetime")
+
+    # Class Magic Methods
+
+    def __str__(self) -> str:
+        return str(f"{self.title}")
+    
+    def __repr__(self) -> str:
+        return str(f"{self.title}")
+    
+    def __unicode__(self) -> str:
+        return str(f"{self.title}")
