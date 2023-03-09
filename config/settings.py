@@ -202,13 +202,13 @@ JALALI_DATE_DEFAULTS = {
 # Django-CKEditor settings
 # https://django-ckeditor.readthedocs.io/en/latest/
 
-CKEDITOR_BASEPATH = BASE_DIR / "static/ckeditor/"
+# CKEDITOR_BASEPATH = BASE_DIR / "static/ckeditor/"
 
 CKEDITOR_UPLOAD_PATH = "content/"
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'skin': 'moono',
+        # 'skin': 'moono',
         # 'skin': 'office2013',
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
@@ -245,7 +245,7 @@ CKEDITOR_CONFIGS = {
         ],
         'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
         'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
-        'height': 291,
+        'height': '100%',
         'width': '100%',
         'filebrowserWindowHeight': 725,
         'filebrowserWindowWidth': 940,
