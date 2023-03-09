@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-05 15:21+0330\n"
+"POT-Creation-Date: 2023-03-09 01:54+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: accounts/apps.py:10
 msgid "Accounts"
 msgstr "حساب‌ها"
@@ -44,3 +45,178 @@ msgstr "نام نمایشی"
 #: accounts/models.py:114
 msgid "Date Joined"
 msgstr "تاریخ عضویت"
+
+#: pages/apps.py:10
+msgid "Pages"
+msgstr "صفحات"
+
+#: pages/templates/includes/_about_me.html:4
+msgid "About Me"
+msgstr "درباره من"
+
+#: pages/templates/includes/_about_me.html:6
+msgid ""
+"Hello my good friend, welcome to my website :) I am Navid Rahimzadeh, an "
+"Iranian Kurdish programmer/developer, musician and essayist. My main field "
+"of activity is in Multi-Platform programming with Dart / Flutter and web "
+"programming with Python / Django / DRF."
+msgstr ""
+"سلام دوست خوب من، به وبسایت من خوش اومدی :) من نوید رحیم‌زاده، برنامه‌نویس / "
+"توسعه‌دهنده، نوازنده و مقاله‌نویس ایرانی کُرد هستم. حوزه اصلی فعالیت من "
+"برنامه‌نویسی Multi-Platform با Dart / Flutter و برنامه‌نویسی وب با Python / "
+"Django / DRF است."
+
+#: pages/templates/includes/_about_me.html:9
+msgid ""
+"In addition to the main part of my activity, the rest of my world of "
+"knowledge is related to tools such as Linux (distributions based on: Debian "
+"- Arch and RedHat) - Docker - Git - Github / GitLab - Testing (unit testing "
+"for Django) - JavaScript - Vue.js - SCSS - In relational databases (SQL): "
+"MySQL / MriaDB - PostgreSQL - OracleDB - In NoSQL databases: Redis - MongoDB "
+"- Monolithic architectures such as MVC / MTV and Micro-Service architecture "
+"are awarded. I am also familiar with PHP, C-Sharp and Laravel, Dot.NET "
+"frameworks."
+msgstr ""
+"علاوه بر بخش اصلی فعالیت‌ام، باقی‌مانده‌ی دنیای دانش من به ابزار هایی مانند "
+"Linux (توزیع‌های مبتنی بر: Debian - Arch و RedHat) - Docker  - Git - Github / "
+"GitLab - Testing (یونیت تست برای Django) - JavaScript - Vue.js - SCSS -  در "
+"پایگاه‌داده‌های رابطه‌ای (SQL): MySQL / MriaDB - PostgreSQL - OracleDB - در "
+"پایگاه‌داده‌های NoSQL: Redis - MongoDB - معماری‌های Monolithic مانند MVC / MTV "
+"و معماری Micro-Service تعلق می‌گیرد. همچنین با زبان‌های PHP، C-Sharp و چارچوب "
+"های Laravel، Dot.NET آشنایی دارم."
+
+#: pages/templates/includes/_about_me.html:12
+msgid ""
+"Also, in music, I have a strong interest in traditional Iranian music, and "
+"because of this interest, I have mastered the instruments of fiddle, tonbak, "
+"santoor, and def. Iranian traditional music is a part of our identity as "
+"Iranians, unfortunately this art is not as interesting as it used to be, but "
+"I personally try to play a part in preserving this ancient art."
+msgstr ""
+"همچنین در زمینه موسیقی علاقه شدیدی به موسیقی سنتی ایرانی دارم و به واسطه این "
+"علاقه، به ساز های کمانچه، تنبک، سنتور و دف تسلط دارم. موسیقی سنتی ایرانی "
+"عضوی از هویت ما ایرانی هاست که متاسفانه به اندازه قبل جالب توجه جامعه نیست، "
+"اما من به شخصه تلاش می‌کنم سهمی در حفظ این هنر باستانی داشته باشم."
+
+#: pages/templates/includes/_about_me.html:15
+msgid ""
+"Writing is considered a positive point from any point of view; It can be for "
+"venting emotions, sharing knowledge, developing ideas and planning. Hence, "
+"essay writing is very important to me because it is a big part of writing, a "
+"lot of it is about sharing my knowledge and information :)"
+msgstr ""
+"نویسندگی از هر دیدگاهی نکته‌ مثبتی محسوب می‌شه؛ می‌تونه برای تخلیه احساسات "
+"باشد، اشتراک دانش، توسعه تفکرات و برنامه‌ریزی. از این رو، مقاله‌نویسی برای من "
+"بسیار مهم است چون عضو بزرگی از نویسندگی است، حجم زیادی از این اهمیت مربوط به "
+"اشتراک‌گذاری دانش و اطلاعات خودم هستش :)"
+
+#: pages/templates/includes/_what_do_i_do.html:4
+msgid "What Do I Do?"
+msgstr "من چه کار هایی انجام می‌دم؟"
+
+#: pages/templates/includes/_what_do_i_do.html:11
+msgid "Front-End and UI Design"
+msgstr "توسعه فرانت‌اند و طراحی UI"
+
+#: pages/templates/includes/_what_do_i_do.html:12
+msgid ""
+"UI design and Front-End development with HTML, CSS and JavaScript. Although "
+"front-end development is not my area of ​​expertise, I have sufficient mastery "
+"of this field."
+msgstr ""
+"طراحی UI و توسعه Front-End وب با HTML, CSS و JavaScript. گرچه توسعه Front-"
+"End شامل دامنه تخصص های من نمی‌شود، اما تسلط کافی نسبت به این حوزه را دارم."
+
+#: pages/templates/includes/_what_do_i_do.html:22
+msgid "Web Development and API"
+msgstr "توسعه وب و API"
+
+#: pages/templates/includes/_what_do_i_do.html:23
+msgid ""
+"Web Back-End / API development, with Django / Django ReST Framework. "
+"Although I have sufficient knowledge of Ruby / Ruby On Rails :)"
+msgstr ""
+"توسعه Back-End وب / API، با Django / Django ReST Framework. گرچه به تسلط هم "
+"Ruby / Ruby On Rails دارم :)"
+
+#: pages/templates/includes/_what_do_i_do.html:33
+msgid "Multi-Platform Software Development"
+msgstr "توسعه نرم‌افزار های چند پلتفرمی"
+
+#: pages/templates/includes/_what_do_i_do.html:34
+msgid ""
+"Software UI development independent of the operating system with Dart and "
+"Flutter (executable in iOS, Android, Windows, Linux and Web)"
+msgstr ""
+"توسعه UI نرم‌افزار های مستقل از سیستم‌عامل با Dart و Flutter. (قابل اجرا در "
+"iOS، Android، Windows، Linux و Web.)"
+
+#: pages/templates/includes/_what_do_i_do.html:44
+msgid "Photography"
+msgstr "عکاسی"
+
+#: pages/templates/includes/_what_do_i_do.html:46
+msgid ""
+"Photography and recording beautiful views has always been one of the most "
+"pleasant arts. Despite my interest in art, recording and preserving "
+"beautiful moments has always been a fascinating and favorite thing for me."
+msgstr ""
+"عکاسی و ثبت لحاظات زیبا همیشه از دل‌نشین‌ترین هنر ها بوده هست. علی‌رغم علاقه من "
+"به هنر، ثبت و نگهداری لحظاتِ زیبا همیشه برایم کار جذاب و مورد علاقه‌ای بوده "
+"است."
+
+#: templates/includes/_menu.html:5
+msgid "Home"
+msgstr "خونه"
+
+#: templates/includes/_menu.html:6
+msgid "Portfolios"
+msgstr "نمونه‌کار ها"
+
+#: templates/includes/_menu.html:7
+msgid "Blog"
+msgstr "بلاگ"
+
+#: templates/includes/_menu.html:8
+msgid "Contact With Me"
+msgstr "ارتباط با من"
+
+#: templates/includes/_sidebar.html:9 templates/includes/_sidebar.html:13
+msgid "Navid Rahimzadeh"
+msgstr "نوید رحیم‌زاده"
+
+#: templates/includes/_sidebar.html:14 templates/includes/_sidebar.html:17
+msgid "Developer, Musician and Essayist"
+msgstr "توسعه‌دهنده، نوازنده و مقاله‌نویس"
+
+#: templates/includes/_sidebar.html:27
+msgid "Email"
+msgstr "ایمیل"
+
+#: templates/includes/_sidebar.html:29
+msgid "itsthenavid@gmail.com"
+msgstr "itsthenavid@gmail.com"
+
+#: templates/includes/_sidebar.html:36
+msgid "Phone Number"
+msgstr "شماره تلفن"
+
+#: templates/includes/_sidebar.html:37
+msgid "+98 937 385 8700"
+msgstr "۸۷۰۰ ۳۸۵ ۹۳۷ ۹۸+"
+
+#: templates/includes/_sidebar.html:44
+msgid "Activity Duration"
+msgstr "مدت‌زمان فعالیت"
+
+#: templates/includes/_sidebar.html:45
+msgid "6 Years"
+msgstr "۶ سال"
+
+#: templates/includes/_sidebar.html:52
+msgid "Location"
+msgstr "موقعیت مکانی"
+
+#: templates/includes/_sidebar.html:53
+msgid "Iran, Kurdistan, Saqqez"
+msgstr "ایران، کردستان، سقز"
