@@ -3,11 +3,13 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.timezone import now
 from django.utils.html import format_html
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
 
 from extensions.utils import get_jalali_datetime, get_jalali_date
+from .managers import ActivePostManager
 
 # Create your models here.
 
@@ -105,23 +107,37 @@ class Post(models.Model):
     title = models.CharField(
         _("Title"),
         max_length=225,
+        unique=True,
         help_text=_(
         "The title of the post does not need "
         "additional explanation, just remind me "
         "that it should be short and concise."
-        )
+        ),
     )
     description = models.CharField(
         _("Post Description"),
         max_length=885,
         blank=True,
+        unique=True,
         help_text=_(
         "The description of this post is shown "
         "for SEO and as a summary of this post "
         "and its content in the list of posts. "
         "The quality of literature and writing "
         "in this field is very important."
-        )
+        ),
+    )
+    slug = models.SlugField(
+        _("Slug"),
+        max_length=225,
+        allow_unicode=True,
+        unique=True,
+        help_text=_(
+        "Slugs are fields for addressing and are "
+        "very important in SEO as well as site "
+        "performance. Preferably, Slug should be "
+        "English and meaningful."
+        ),
     )
     category = models.ForeignKey(
         verbose_name=_("Post Category"),
@@ -187,6 +203,9 @@ class Post(models.Model):
         "being shown to the public."
         )
     )
+    # Managers
+    objects = models.Manager()
+    actives = ActivePostManager()
 
     # Class Subclasses
 
@@ -217,6 +236,9 @@ class Post(models.Model):
         return get_jalali_date(self.pub_datetime)
     get_jalali_pub_date.short_description = _("Publish Date")
 
+    def get_absolute_url(self):
+        return reverse("blog:post_detail", kwargs={"slug": self.slug})
+    
     # Class Magic Methods
 
     def __str__(self) -> str:
