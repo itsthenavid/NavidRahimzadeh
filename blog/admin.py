@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from jalali_date.admin import ModelAdminJalaliMixin
+
 from .models import Category, Post
 
 # Register your models here.
@@ -25,7 +27,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     """
     This class is for customizing the Post model in the admin panel. The 
     information of this class should be very detailed and accurate and 
@@ -39,6 +41,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = (
         "get_post_banner_thumbnail",
         "title",
+        "author",
         "category",
         "get_jalali_pub_datetime",
         "status",
