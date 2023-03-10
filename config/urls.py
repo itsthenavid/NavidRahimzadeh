@@ -26,6 +26,7 @@ urlpatterns = [
     path('captcha/', include('captcha.urls')),
     # Developer apps URLs
     path("", include("pages.urls")),
+    path("blog/", include("blog.urls")),
 ]
 
 # By default (when settings.DEBUG==True), Django can't serve the Media files.
