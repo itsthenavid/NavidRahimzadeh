@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-09 01:54+0330\n"
+"POT-Creation-Date: 2023-03-10 03:50+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,177 @@ msgstr "نام نمایشی"
 msgid "Date Joined"
 msgstr "تاریخ عضویت"
 
+#: blog/apps.py:10 blog/templates/blog/post_list.html:13
+#: templates/includes/_menu.html:6
+msgid "Blog"
+msgstr "بلاگ"
+
+#: blog/models.py:26
+msgid "Category Name"
+msgstr "نام دسته‌بندی"
+
+#: blog/models.py:29
+msgid ""
+"You can choose a name for this category. This name is displayed when a post "
+"is read."
+msgstr ""
+"می‌تونی یه اسم برای این دسته‌بندی انتخاب کنی. اسم این دسته‌بندی هنگام خوندن پست "
+"توسط کاربر نشون داده می‌شه."
+
+#: blog/models.py:34
+msgid "Category Content"
+msgstr "محتوای دسته‌بندی"
+
+#: blog/models.py:37
+msgid ""
+"The description of this category can have a great impact on the process of "
+"editing, deleting, adding and naming it."
+msgstr ""
+"توضیحاتِ این دسته‌بندی می‌تونه تاثیر مثبتی روی پروسه ویرایش، حذف، اضافه و "
+"نام‌گذاریِ این دسته‌بندی داشته باشه."
+
+#: blog/models.py:43 blog/models.py:198
+msgid "Active"
+msgstr "فعال"
+
+#: blog/models.py:46 blog/models.py:201
+msgid "The \"Active\" option can stop posts from being shown to the public."
+msgstr "خاموش کردن گزینه‌ی «فعال» می‌تونه نمایش پست رو متوقف کنه."
+
+#: blog/models.py:62
+msgid "Category"
+msgstr "دسته‌بندی"
+
+#: blog/models.py:63
+msgid "Categories"
+msgstr "دسته‌بندی‌ها"
+
+#: blog/models.py:90
+msgid "Draft"
+msgstr "پیش‌نویس"
+
+#: blog/models.py:91
+msgid "Published"
+msgstr "منتشر شده"
+
+#: blog/models.py:96 blog/models.py:228
+msgid "Post Banner"
+msgstr "بنر پست"
+
+#: blog/models.py:100
+msgid ""
+"The post banner is a field that is shown to the user next to the post title "
+"in any case and is completely different from other photos of the post "
+"content."
+msgstr ""
+"بنر پست، فیلدی هست که در هر حالت کنار عنوان پست به کاربر نشون داده می‌شه و با "
+"عکس های دیگرِ محتوای پست، کاملاً متفاوت هستش."
+
+#: blog/models.py:107
+msgid "Title"
+msgstr "عنوان پست"
+
+#: blog/models.py:111
+msgid ""
+"The title of the post does not need additional explanation, just remind me "
+"that it should be short and concise."
+msgstr ""
+"عنوان پست نیاز به توضیح اضافی نداره، صرفا یادآور بشم که باید کوتاه و رِسا "
+"باشه."
+
+#: blog/models.py:117
+msgid "Post Description"
+msgstr "توضیحات پست"
+
+#: blog/models.py:122
+msgid ""
+"The description of this post is shown for SEO and as a summary of this post "
+"and its content in the list of posts. The quality of literature and writing "
+"in this field is very important."
+msgstr ""
+"توضیحات این پست برای SEO و  به‌عنوان خلاصه‌ای از این پست و محتواش توی لیست "
+"پست‌ها نشون داده می‌شه. کیفیت ادبیات و نوشتار این فیلد خیلی مهمه."
+
+#: blog/models.py:130
+msgid "Slug"
+msgstr "اسلاگ"
+
+#: blog/models.py:135
+msgid ""
+"Slugs are fields for addressing and are very important in SEO as well as "
+"site performance. Preferably, Slug should be English and meaningful."
+msgstr "Slug ها فیلد هایی برای آدرس‌یابی هستند و در SEO و همچنین کارایی سایت اهمیت بالایی دارن. ترجیحاً Slug باید انگلیسی باشه و معنی‌دار هم باشه. "
+
+#: blog/models.py:142
+msgid "Post Category"
+msgstr "دسته بندی پست"
+
+#: blog/models.py:147
+msgid "Choose a category related to the content of the post for the post."
+msgstr "یه دسته‌بندیِ مربوط به محتوای پست برای پست انتخاب کن."
+
+#: blog/models.py:152
+msgid "Datetime Created"
+msgstr "تاریخ و زمان ایجاد"
+
+#: blog/models.py:157
+msgid "Datetime Modified"
+msgstr "تاریخ عضویت"
+
+#: blog/models.py:162
+msgid "Author"
+msgstr "نویسنده"
+
+#: blog/models.py:168
+msgid "Post Content"
+msgstr "محتوای پست"
+
+#: blog/models.py:171
+msgid ""
+"This part of the post is the body and full content of the post. Here you are "
+"not limited by any special rules and you can type as much as you want. "
+"Remember, your only limitation is offensive words. It is not acceptable to "
+"post offensive words on the site. Apart from this, in addition to the text, "
+"you can upload any file you want."
+msgstr ""
+"این قسمت از پست، بدنه و محتوای کامل پست هستش. اینجا محدود به هیچ قاعده‌ی خاصی "
+"نیستی و می‌تونی به اندازه‌ای که دلت می‌خواد تایپ کنی. یادت باشه تنها محدودیت "
+"تو، کلمات توهین‌آمیز هستش. به هیچ‌وجه قرار گرفتن کلمات توهین‌آمیز توی سایت "
+"قابل‌قبول نیست. غیر از این موضوع، علاوه بر متن، می‌تونی هر فایلی که دلت خواست "
+"رو آپلود کنی."
+
+#: blog/models.py:182 blog/models.py:232
+msgid "Publish Datetime"
+msgstr "تاریخ و زمان انتشار"
+
+#: blog/models.py:188
+msgid "Tags"
+msgstr "تگ‌ها"
+
+#: blog/models.py:192
+msgid "Status"
+msgstr "وضعیت"
+
+#: blog/models.py:217
+msgid "Post"
+msgstr "پست"
+
+#: blog/models.py:218
+msgid "Posts"
+msgstr "پست‌ها"
+
+#: blog/models.py:236
+msgid "Publish Date"
+msgstr "تاریخ نتشار"
+
+#: blog/templates/blog/post_detail.html:13
+msgid "Post Detail"
+msgstr "جزئیات پست"
+
+#: blog/templates/blog/post_list.html:7
+msgid "Post List"
+msgstr "پست‌ها"
+
 #: pages/apps.py:10
 msgid "Pages"
 msgstr "صفحات"
@@ -55,6 +226,7 @@ msgid "About Me"
 msgstr "درباره من"
 
 #: pages/templates/includes/_about_me.html:6
+#: templates/includes/_meta_data.html:9
 msgid ""
 "Hello my good friend, welcome to my website :) I am Navid Rahimzadeh, an "
 "Iranian Kurdish programmer/developer, musician and essayist. My main field "
@@ -81,9 +253,9 @@ msgstr ""
 "Linux (توزیع‌های مبتنی بر: Debian - Arch و RedHat) - Docker  - Git - Github / "
 "GitLab - Testing (یونیت تست برای Django) - JavaScript - Vue.js - SCSS -  در "
 "پایگاه‌داده‌های رابطه‌ای (SQL): MySQL / MriaDB - PostgreSQL - OracleDB - در "
-"پایگاه‌داده‌های NoSQL: Redis - MongoDB - معماری‌های Monolithic مانند MVC / MTV "
-"و معماری Micro-Service تعلق می‌گیرد. همچنین با زبان‌های PHP، C-Sharp و چارچوب "
-"های Laravel، Dot.NET آشنایی دارم."
+"پایگاه‌داده‌های غیررابطه‌ای: Redis - MongoDB - معماری‌های Monolithic مانند MVC / "
+"MTV و معماری Micro-Service تعلق می‌گیرد. همچنین با زبان‌های PHP، C-Sharp و "
+"چارچوب های Laravel، Dot.NET آشنایی دارم."
 
 #: pages/templates/includes/_about_me.html:12
 msgid ""
@@ -165,25 +337,22 @@ msgstr ""
 "به هنر، ثبت و نگهداری لحظاتِ زیبا همیشه برایم کار جذاب و مورد علاقه‌ای بوده "
 "است."
 
+#: pages/templates/pages/home.html:8 templates/includes/_meta_data.html:8
+#: templates/includes/_sidebar.html:9 templates/includes/_sidebar.html:13
+msgid "Navid Rahimzadeh"
+msgstr "نوید رحیم‌زاده"
+
 #: templates/includes/_menu.html:5
 msgid "Home"
 msgstr "خونه"
 
-#: templates/includes/_menu.html:6
+#: templates/includes/_menu.html:7
 msgid "Portfolios"
 msgstr "نمونه‌کار ها"
-
-#: templates/includes/_menu.html:7
-msgid "Blog"
-msgstr "بلاگ"
 
 #: templates/includes/_menu.html:8
 msgid "Contact With Me"
 msgstr "ارتباط با من"
-
-#: templates/includes/_sidebar.html:9 templates/includes/_sidebar.html:13
-msgid "Navid Rahimzadeh"
-msgstr "نوید رحیم‌زاده"
 
 #: templates/includes/_sidebar.html:14 templates/includes/_sidebar.html:17
 msgid "Developer, Musician and Essayist"
