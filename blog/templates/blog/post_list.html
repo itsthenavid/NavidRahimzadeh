@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% translate "Post List" %}
+{% endblock title %}
+
+{% block content %}
+<!-- About -->
+<div class="pb-0 pb-sm-2">
+    <h1 class="title title--h1 title__separate">{% translate "Blog" %}</h1>
+</div>
+
+<!-- News -->
+<div class="news-grid">
+    {% for post in posts %}
+        <!-- Post -->
+        <article class="news-item box">
+            <div class="news-item__image-wrap">
+                <a class="news-item__link" href="{{ post.get_absolute_url }}"></a>
+                <img class="cover lazyload" src="{{ post.banner.url }}" alt="{{ post.title }}" />
+            </div>
+            <div class="news-item__caption">
+                <div class="news-item__date"><span>{{ post.author.get_user_display_name }}</span>{{ post.get_jalali_pub_date }}</div>
+                <h2 class="title title--h2"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                <p>
+                    <b>
+                        {{ post.description }}
+                    </b>
+                </p>
+            </div>
+        </article>
+    {% endfor %}
+</div><!-- /news-grid -->
+{% endblock content %}
