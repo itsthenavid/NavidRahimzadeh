@@ -1,12 +1,12 @@
 from django.urls import path
 
-from .views import post_list_view, post_detail_view
+from .views import PostListView, PostDetailView
 
 # Write URL Patterns here.
 
 app_name = "blog"
 
 urlpatterns = [
-    path("", post_list_view, name="post_list"),
-    path("<slug:slug>/", post_detail_view, name="post_detail"),
+    path("", PostListView.as_view(), name="post_list"),
+    path("<slug:slug>/", PostDetailView.as_view(), name="post_detail"),
 ]
