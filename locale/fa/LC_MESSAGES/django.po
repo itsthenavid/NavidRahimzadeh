@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-10 03:50+0330\n"
+"POT-Creation-Date: 2023-03-11 16:12+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,11 +51,11 @@ msgstr "تاریخ عضویت"
 msgid "Blog"
 msgstr "بلاگ"
 
-#: blog/models.py:26
+#: blog/models.py:27
 msgid "Category Name"
 msgstr "نام دسته‌بندی"
 
-#: blog/models.py:29
+#: blog/models.py:30
 msgid ""
 "You can choose a name for this category. This name is displayed when a post "
 "is read."
@@ -63,11 +63,11 @@ msgstr ""
 "می‌تونی یه اسم برای این دسته‌بندی انتخاب کنی. اسم این دسته‌بندی هنگام خوندن پست "
 "توسط کاربر نشون داده می‌شه."
 
-#: blog/models.py:34
+#: blog/models.py:35
 msgid "Category Content"
 msgstr "محتوای دسته‌بندی"
 
-#: blog/models.py:37
+#: blog/models.py:38
 msgid ""
 "The description of this category can have a great impact on the process of "
 "editing, deleting, adding and naming it."
@@ -75,35 +75,35 @@ msgstr ""
 "توضیحاتِ این دسته‌بندی می‌تونه تاثیر مثبتی روی پروسه ویرایش، حذف، اضافه و "
 "نام‌گذاریِ این دسته‌بندی داشته باشه."
 
-#: blog/models.py:43 blog/models.py:198
+#: blog/models.py:44 blog/models.py:199 blog/models.py:303
 msgid "Active"
 msgstr "فعال"
 
-#: blog/models.py:46 blog/models.py:201
+#: blog/models.py:47 blog/models.py:202
 msgid "The \"Active\" option can stop posts from being shown to the public."
 msgstr "خاموش کردن گزینه‌ی «فعال» می‌تونه نمایش پست رو متوقف کنه."
 
-#: blog/models.py:62
+#: blog/models.py:63
 msgid "Category"
 msgstr "دسته‌بندی"
 
-#: blog/models.py:63
+#: blog/models.py:64
 msgid "Categories"
 msgstr "دسته‌بندی‌ها"
 
-#: blog/models.py:90
+#: blog/models.py:91
 msgid "Draft"
 msgstr "پیش‌نویس"
 
-#: blog/models.py:91
+#: blog/models.py:92
 msgid "Published"
 msgstr "منتشر شده"
 
-#: blog/models.py:96 blog/models.py:228
+#: blog/models.py:97 blog/models.py:229
 msgid "Post Banner"
 msgstr "بنر پست"
 
-#: blog/models.py:100
+#: blog/models.py:101
 msgid ""
 "The post banner is a field that is shown to the user next to the post title "
 "in any case and is completely different from other photos of the post "
@@ -112,11 +112,11 @@ msgstr ""
 "بنر پست، فیلدی هست که در هر حالت کنار عنوان پست به کاربر نشون داده می‌شه و با "
 "عکس های دیگرِ محتوای پست، کاملاً متفاوت هستش."
 
-#: blog/models.py:107
+#: blog/models.py:108
 msgid "Title"
 msgstr "عنوان پست"
 
-#: blog/models.py:111
+#: blog/models.py:112
 msgid ""
 "The title of the post does not need additional explanation, just remind me "
 "that it should be short and concise."
@@ -124,11 +124,11 @@ msgstr ""
 "عنوان پست نیاز به توضیح اضافی نداره، صرفا یادآور بشم که باید کوتاه و رِسا "
 "باشه."
 
-#: blog/models.py:117
+#: blog/models.py:118
 msgid "Post Description"
 msgstr "توضیحات پست"
 
-#: blog/models.py:122
+#: blog/models.py:123
 msgid ""
 "The description of this post is shown for SEO and as a summary of this post "
 "and its content in the list of posts. The quality of literature and writing "
@@ -137,41 +137,43 @@ msgstr ""
 "توضیحات این پست برای SEO و  به‌عنوان خلاصه‌ای از این پست و محتواش توی لیست "
 "پست‌ها نشون داده می‌شه. کیفیت ادبیات و نوشتار این فیلد خیلی مهمه."
 
-#: blog/models.py:130
+#: blog/models.py:131
 msgid "Slug"
 msgstr "اسلاگ"
 
-#: blog/models.py:135
+#: blog/models.py:136
 msgid ""
 "Slugs are fields for addressing and are very important in SEO as well as "
 "site performance. Preferably, Slug should be English and meaningful."
-msgstr "Slug ها فیلد هایی برای آدرس‌یابی هستند و در SEO و همچنین کارایی سایت اهمیت بالایی دارن. ترجیحاً Slug باید انگلیسی باشه و معنی‌دار هم باشه. "
+msgstr ""
+"Slug ها فیلد هایی برای آدرس‌یابی هستند و در SEO و همچنین کارایی سایت اهمیت "
+"بالایی دارن. ترجیحاً Slug باید انگلیسی باشه و معنی‌دار هم باشه. "
 
-#: blog/models.py:142
+#: blog/models.py:143
 msgid "Post Category"
 msgstr "دسته بندی پست"
 
-#: blog/models.py:147
+#: blog/models.py:148
 msgid "Choose a category related to the content of the post for the post."
 msgstr "یه دسته‌بندیِ مربوط به محتوای پست برای پست انتخاب کن."
 
-#: blog/models.py:152
+#: blog/models.py:153 blog/models.py:276 blog/models.py:335
 msgid "Datetime Created"
 msgstr "تاریخ و زمان ایجاد"
 
-#: blog/models.py:157
+#: blog/models.py:158 blog/models.py:281
 msgid "Datetime Modified"
 msgstr "تاریخ عضویت"
 
-#: blog/models.py:162
+#: blog/models.py:163
 msgid "Author"
 msgstr "نویسنده"
 
-#: blog/models.py:168
+#: blog/models.py:169
 msgid "Post Content"
 msgstr "محتوای پست"
 
-#: blog/models.py:171
+#: blog/models.py:172
 msgid ""
 "This part of the post is the body and full content of the post. Here you are "
 "not limited by any special rules and you can type as much as you want. "
@@ -185,33 +187,77 @@ msgstr ""
 "قابل‌قبول نیست. غیر از این موضوع، علاوه بر متن، می‌تونی هر فایلی که دلت خواست "
 "رو آپلود کنی."
 
-#: blog/models.py:182 blog/models.py:232
+#: blog/models.py:183 blog/models.py:233
 msgid "Publish Datetime"
 msgstr "تاریخ و زمان انتشار"
 
-#: blog/models.py:188
+#: blog/models.py:189
 msgid "Tags"
 msgstr "تگ‌ها"
 
-#: blog/models.py:192
+#: blog/models.py:193
 msgid "Status"
 msgstr "وضعیت"
 
-#: blog/models.py:217
+#: blog/models.py:218 blog/models.py:270
 msgid "Post"
 msgstr "پست"
 
-#: blog/models.py:218
+#: blog/models.py:219
 msgid "Posts"
 msgstr "پست‌ها"
 
-#: blog/models.py:236
+#: blog/models.py:237
 msgid "Publish Date"
 msgstr "تاریخ نتشار"
+
+#: blog/models.py:286
+msgid "Commenter"
+msgstr "نویسنده‌ی نظر"
+
+#: blog/models.py:292 blog/models.py:318
+msgid "Comment"
+msgstr "نظر"
+
+#: blog/models.py:295
+msgid "Reply"
+msgstr "پاسخ"
+
+#: blog/models.py:319 blog/templates/blog/post_detail.html:97
+msgid "Comments"
+msgstr "نظرات"
 
 #: blog/templates/blog/post_detail.html:13
 msgid "Post Detail"
 msgstr "جزئیات پست"
+
+#: blog/templates/blog/post_detail.html:55
+msgid "Write..."
+msgstr "بنویسید..."
+
+#: blog/templates/blog/post_detail.html:89
+msgid ""
+"You can comment on this post :) But first you have to <a href=\"/accounts/"
+"login/\">login from this link</a> and if you don't have an account, <a href="
+"\"/accounts/signup/\">register from this link</a>."
+msgstr ""
+"می‌تونی برای این پستمون نظر بذاری اما قبلش باید <a href='/accounts/login'>از "
+"این لینک وارد</a> بشی یا <a href='/accounts/signup/'>از این لینک ثبت‌نام کنی</"
+"a>."
+
+#: blog/templates/blog/post_detail.html:116
+msgid "Reply..."
+msgstr "سوالی، جوابی..."
+
+#: blog/templates/blog/post_detail.html:151
+msgid ""
+"You can reply on this comment :) But first you have to <a href=\"/accounts/"
+"login/\">login from this link</a> and if you don't have an account, <a href="
+"\"/accounts/signup/\">register from this link</a>."
+msgstr ""
+"می‌تونی به این نظر جواب بدی اما قبلش باید <a href='/accounts/login'>از "
+"این لینک وارد</a> بشی یا <a href='/accounts/signup/'>از این لینک ثبت‌نام کنی</"
+"a>."
 
 #: blog/templates/blog/post_list.html:7
 msgid "Post List"
@@ -389,3 +435,6 @@ msgstr "موقعیت مکانی"
 #: templates/includes/_sidebar.html:53
 msgid "Iran, Kurdistan, Saqqez"
 msgstr "ایران، کردستان، سقز"
+
+#~ msgid "You can comment on this post :)"
+#~ msgstr "می‌تونی به این پستمون نظر بدی :)"
