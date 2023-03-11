@@ -221,6 +221,9 @@ class Post(models.Model):
     # Class Methods
 
     def get_post_banner_thumbnail(self):
+        """
+        Returning a thumbnail to show on admin panel and more.
+        """
         return format_html(
             """
             <img src="{}" style="height: 100px; width: 150px;" />
@@ -237,6 +240,11 @@ class Post(models.Model):
     get_jalali_pub_date.short_description = _("Publish Date")
 
     def get_absolute_url(self):
+        """
+        Main address of Model.
+
+        Using for SEO, URL management and more.
+        """
         return reverse("blog:post_detail", kwargs={"slug": self.slug})
     
     # Class Magic Methods
@@ -249,3 +257,101 @@ class Post(models.Model):
     
     def __unicode__(self) -> str:
         return str(f"{self.title}")
+    
+
+class Comment(models.Model):
+    """
+    This model is part of the sub-models of the project, but it is very 
+    efficient. Comments are displayed in a branched thread. Each comment  
+    is related to one post and one author, so that no author other than  
+    the original author of the comment has the right to edit and  
+    manipulate the comment. In the first phase of the project, this part  
+    will definitely not be that advanced, but remember this model.
+
+    This model should be designed very simply and at the same time 
+    efficiently. In addition, it should include the Reply feature 
+    in a branch form.
+    """
+
+    # Database fields
+    post = models.ForeignKey(
+        verbose_name=_("Post"),
+        to=Post,
+        on_delete=models.CASCADE,
+        related_name="post_comments"
+    )
+    datetime_created = models.DateTimeField(
+        _("Datetime Created"),
+        auto_now_add=True,
+        auto_now=False
+    )
+    datetime_modified = models.DateTimeField(
+        _("Datetime Modified"),
+        auto_now_add=False,
+        auto_now=True
+    )
+    commenter = models.ForeignKey(
+        verbose_name=_("Commenter"),
+        to=get_user_model(),
+        on_delete=models.CASCADE,
+        related_name="user_comments",
+    )
+    comment = models.TextField(
+        _("Comment"),
+    )
+    parent = models.ForeignKey(
+        verbose_name=_("Reply"),
+        to='self',
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="replies"
+    )
+    is_active = models.BooleanField(
+        _("Active"),
+        default=True
+    )
+
+    # Class Subclasses
+
+    class Meta:
+        """
+        This class is initialized to customize the settings of the Comment 
+        model.
+        """
+        # Ordering system
+        ordering = ("-datetime_modified", "-datetime_created", )
+
+        # Translation and names
+        verbose_name = _("Comment")
+        verbose_name_plural = _("Comments")
+
+    # Class Methods
+
+    @property
+    def children(self):
+        """
+        Returning replay comments‍
+        """
+        return Comment.objects.filter(parent=self).reverse()
+
+    @property
+    def is_parent(self):
+        if self.parent is None:
+            return True
+        return False
+    
+    def get_jalali_datetime_created(self):
+        return get_jalali_datetime(self.datetime_created)
+    get_jalali_datetime_created.short_description = _("Datetime Created")
+
+    # Class Magic Methods
+
+    def __str__(self) -> str:
+        return str(f"{self.commenter}")
+    
+    def __repr__(self) -> str:
+        return str(f"{self.commenter}")
+    
+    def __unicode__(self) -> str:
+        return str(f"{self.commenter}")
