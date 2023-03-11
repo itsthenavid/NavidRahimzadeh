@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from jalali_date.admin import ModelAdminJalaliMixin
 
-from .models import Category, Post
+from .models import Category, Post, Comment
 
 # Register your models here.
 
@@ -63,3 +63,6 @@ class PostAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
         "description",
         "content",
     )
+
+
+admin.site.register(Comment)
