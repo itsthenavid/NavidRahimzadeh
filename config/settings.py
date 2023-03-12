@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
     "blog.apps.BlogConfig",
-    "clusters.apps.ClusterConfig",
+    "clusters.apps.ClustersConfig",
 ]
 
 MIDDLEWARE = [
