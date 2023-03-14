@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Third-Party installed apps
     "allauth",
     "allauth.account",
+    "allauth.socialaccount",
     "ckeditor",
     "ckeditor_uploader",
     "crispy_forms",
