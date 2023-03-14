@@ -14,4 +14,4 @@ class ActivePostManager(Manager):
     def get_queryset(self):
         return super(ActivePostManager, self).get_queryset()\
         .exclude(is_active=False).filter(pub_datetime__lte=now())\
-        .exclude(status=str(0)).filter(category__is_active=True)
+            .exclude(status=str(0)).filter(category__is_active=True)
