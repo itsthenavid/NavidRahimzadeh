@@ -27,7 +27,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Post)
-class PostAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     """
     This class is for customizing the Post model in the admin panel. The 
     information of this class should be very detailed and accurate and 
