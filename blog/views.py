@@ -1,7 +1,6 @@
-# from django.shortcuts import render
-from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
-from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.http import HttpResponseRedirect, Http404
+from django.core.exceptions import ObjectDoesNotExist
 
 from .models import Post, Comment
 from .forms import CommentForm
@@ -9,61 +8,84 @@ from .forms import CommentForm
 # Create your views here.
 
 
-class PostListView(ListView):
+def post_list_view(request):
     """
-    Send a list of active posts to blog/post_list.html and prepare to 
-    appear in the URL
+    This function is used to display the list of posts in real time.
+
+    Posts in this function are developed using actives (Manager) filter.
+
+    Finally, the posts are shown in the templates after passing the 
+    ActivesPostManager filters.
     """
-    model = Post
-    queryset = Post.actives.all()
-    template_name = "blog/post_list.html"
-    context_object_name = "posts"
+    # Get posts that are eligible to be displayed.
+    posts = Post.actives.all()
+
+    # Compilation and rendering of data
+    context = {
+        "posts": posts,
+    }
+    return render(request, "blog/post_list.html", context)
 
 
-class PostDetailView(DetailView):
+def post_detail_view(request, slug):
     """
-    Send one of the active posts to blog/post_detail and display user 
-    comments, receive user comments
+    This function is responsible for sending a post with details to the 
+    template based on the slug requested by the user 
+    (may be sent from a list).
+
+    Notes about the function:
+    1. This function should support 404 error.
+    2. The post returned by this function must be one of the active posts.
+    3. Send a comprehensive view of the post model and comments to the format.
+    4. Can receive comments
     """
-    model = Post
-    queryset = Post.actives
-    template_name = "blog/post_detail.html"
-    slug_field = "slug"
-
-    # Class Methods
-
-    def get_context_data(self, *args, **kwargs):
-        # Get old method information
-        data = super().get_context_data(*args, **kwargs)
-        # Get comments of the post
-        connected_comments = Comment.objects.filter(post=self.get_object())
-        # Counting comments
+    try:
+        # Attempt to find the requested post based on the slug given by 
+        # the user
+        post = Post.actives.get(slug=slug)
+        # If successful, collecting comments and their number
+        connected_comments = Comment.objects.filter(is_active=True)\
+            .filter(post=post)
         number_of_comments = connected_comments.count()
-        # Send the received information to contexts
-        data['comments'] = connected_comments
-        data['number_of_comments'] = number_of_comments
-        data['comment_form'] = CommentForm()
-        return data
+    except ObjectDoesNotExist:
+        # Raise 404 status code if the requested post does not exist
+        raise Http404
 
-    def post(self, request, *args, **kwargs):
-        if self.request.method == 'POST':
-            # Creating a new form and checking the validity of the form
-            comment_form = CommentForm(self.request.POST)
-            if comment_form.is_valid():
-                comment = comment_form.cleaned_data['comment']
-                # Check if the reply is sent or not
-                try:
-                    parent = comment_form.cleaned_data['parent']
-                except:
-                    parent = None
+    # Check the request type
+    if request.method == "POST":
+        # Creating a form based on the information sent (POST).
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            # If the quality of the security and information of the form is 
+            # correct, start saving the data...
+            # Some information must be filled in by the developer himself
+            # So: "commit=False". Now we can save some data.
+            comment = form.save(commit=False)
+            try:
+                # If the print field was sent from the template, we will fill it.
+                comment.parent = form.cleaned_data["parent"]
+            except:
+                comment.parent = None
+            # Next, the author of the comment and the post related to the comment 
+            # will be added.
+            comment.commenter = request.user
+            comment.post = post
+            comment.save()
+            # After saving the comment, basically a refresh is done to the main 
+            # page.
+            return HttpResponseRedirect(request.path_info)
+        else:
+            # If the information is incorrect and their security accuracy is not 
+            # confirmed, the return to the main page will begin.
+            return HttpResponseRedirect(request.path_info)
+    else:
+        # If the request is GET, we dedicate an empty form.
+        form = CommentForm()
 
-            
-            # Creating a new comment based on the submission data 
-            # received from POST
-            new_comment = Comment(
-                comment=comment, commenter=self.request.user, post=self.get_object(), 
-                parent=parent
-            )
-            new_comment.save()
-            # Return the user to the page
-            return HttpResponseRedirect(self.request.path_info)
+    context = {
+        "post": post,
+        "comments": connected_comments,
+        "number_of_comments": number_of_comments,
+        "form": form
+    }
+    return render(request, "blog/post_detail.html", context)
