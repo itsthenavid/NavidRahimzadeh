@@ -7,6 +7,7 @@ RUN apt-get -y install gettext
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV TZ="Asia/Tehran"
 
 RUN mkdir /code/
 WORKDIR /code
